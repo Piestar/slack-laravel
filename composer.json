@@ -1,6 +1,6 @@
 {
-    "name": "maknz/slack-laravel",
-    "description": "Laravel 4 and 5 integration for the maknz/slack package, including facades and service providers.",
+    "name": "piestar/slack-laravel",
+    "description": "Laravel 5 integration for the maknz/slack package, including a facade and service provider.",
     "keywords": ["slack", "laravel"],
     "license": "BSD-2-Clause",
     "authors": [
@@ -10,20 +10,24 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "maknz/slack": "^1.7.1"
+        "php": "^7.0",
+        "alek13/slack": "^1.10",
+        "laravel/framework": "^5.2"
     },
     "autoload": {
         "psr-4": {
-            "Maknz\\Slack\\Laravel\\": "src/"
+            "Piestar\\Slack\\Laravel\\": "src/"
         }
     },
     "minimum-stability": "stable",
     "extra": {
         "laravel": {
             "providers": [
-                "Maknz\\Slack\\Laravel\\ServiceProvider"
-            ]
+                "Piestar\\Slack\\Laravel\\SlackServiceProvider"
+            ],
+            "aliases": {
+                "Slack": "Piestar\\Slack\\Laravel\\Slack"
+            }
         }
     }
 }
